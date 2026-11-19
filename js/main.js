@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
         elementsToAnimate.forEach(el => el.classList.add('visible'));
       }, 100); // Jeda 100ms sebelum animasi mulai
 
-    }, 3000); 
+    }, 1500); 
   }
 });
 
