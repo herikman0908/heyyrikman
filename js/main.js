@@ -624,7 +624,7 @@ const cert9Data = {
     "assets/certificates/sertif_7.png", 
     "assets/certificates/sertif_7_kelas2.png", 
     "assets/certificates/sertif_7_kelas3.png", 
-    "assets/certificates/sertif_7_kelas4.png"
+    "assets/certificates/sertif_7_kelas4.jpg"
   ],
   // TAMBAHKAN ARRAY TITLES DI SINI
   titles: [
