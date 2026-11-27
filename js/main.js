@@ -295,8 +295,6 @@ function closeCertModal() {
   certModal.classList.remove('open');
   certModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
-  const modalPdf = document.getElementById('certModalPdf');
-  if (modalPdf) modalPdf.src = '';
 }
 
 document.querySelectorAll('.cert-view-btn').forEach(btn => {
@@ -717,34 +715,5 @@ if (certViewBtn9) {
     // Ambil gambar yang sedang aktif berdasarkan index slider
     const currentImage = cert9Data.images[cert9CurrentIndex];
     openModal(currentImage, cert9Data.titles[cert9CurrentIndex] + " - " + cert9Data.dates[cert9CurrentIndex]);
-  });
-}
-/* ===== TAMPILKAN CV DI MODAL ===== */
-const viewCV = document.getElementById('viewCV');
-if (viewCV) {
-  viewCV.addEventListener('click', (e) => {
-    e.preventDefault(); // Mencegah download/buka tab baru
-    
-    const pdfUrl = viewCV.getAttribute('href');
-    const modalPdf = document.getElementById('certModalPdf');
-    const modalImage = document.getElementById('certModalImage');
-    const modalTitle = document.getElementById('certModalTitle');
-    
-    // Sembunyikan gambar, tampilkan iframe PDF
-    modalImage.style.display = 'none';
-    modalPdf.style.display = 'block';
-    modalPdf.src = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
-    
-    modalTitle.textContent = 'CV Herikman';
-    
-    // Sembunyikan tombol panah & indikator
-    document.getElementById('modalPrevBtn').style.display = 'none';
-    document.getElementById('modalNextBtn').style.display = 'none';
-    document.getElementById('modalIndicator').style.display = 'none';
-    
-    // Buka modal
-    document.getElementById('certModal').classList.add('open');
-    document.getElementById('certModal').setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
   });
 }
